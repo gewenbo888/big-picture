@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --void: #07080f;
+  --flux: #ff6b5c;
+  --iris: #8b7bff;
+  --leaf: #2dd4bf;
+  --gold: #f5b942;
+  --plasm: #ff4fa3;
+  --ink: #f4f4fb;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--void);
+  color: var(--ink);
+}
+
+body {
+  background-color: #07080f;
+  background-image:
+    radial-gradient(ellipse 1200px 640px at 8% -8%, rgba(255, 107, 92, 0.10), transparent 60%),
+    radial-gradient(ellipse 1050px 580px at 94% 2%, rgba(139, 123, 255, 0.13), transparent 62%),
+    radial-gradient(ellipse 960px 600px at 50% 116%, rgba(45, 212, 191, 0.07), transparent 60%);
+  font-family: "Spectral", ui-serif, Georgia, serif;
+  letter-spacing: 0.003em;
+}
+
+::selection { background: rgba(255, 107, 92, 0.34); color: #07080f; }
+
+.display { font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+.zh { font-family: "Noto Serif SC", serif; }
+.zhsans { font-family: "Noto Sans SC", sans-serif; }
+.label-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.26em; text-transform: uppercase; font-size: 0.64rem; color: var(--flux);
+}
+
+/* the one-world sweep — coral → violet → life-teal */
+.spark-text {
+  background: linear-gradient(100deg, #ff9b8f 0%, #ff6b5c 26%, #8b7bff 60%, #2dd4bf 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.flux-text { color: #ff9b8f; }
+.iris-text { color: #b3a8ff; }
+.leaf-text { color: #6ee7d6; }
+.plasm-text { color: #ff8cc4; }
+.gold-text {
+  color: #ffe3a8;
+  text-shadow: 0 0 26px rgba(245, 185, 66, 0.45), 0 0 76px rgba(245, 185, 66, 0.18);
+}
+.flux-glow {
+  color: #ff9b8f;
+  text-shadow: 0 0 26px rgba(255, 107, 92, 0.5), 0 0 80px rgba(255, 107, 92, 0.2);
+}
+
+/* frosted cosmos panel */
+.panel {
+  background: linear-gradient(160deg, rgba(40, 44, 72, 0.42), rgba(12, 14, 26, 0.92));
+  border: 1px solid rgba(255, 107, 92, 0.10);
+  backdrop-filter: blur(9px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.panel:hover { border-color: rgba(255, 107, 92, 0.42); box-shadow: 0 0 44px -18px rgba(255,107,92,0.6); }
+
+.panel-iris { border-color: rgba(139,123,255,0.2); }
+.panel-iris:hover { border-color: rgba(139,123,255,0.55); box-shadow: 0 0 44px -18px rgba(139,123,255,0.6); }
+.panel-leaf { border-color: rgba(45,212,191,0.2); }
+.panel-leaf:hover { border-color: rgba(45,212,191,0.55); box-shadow: 0 0 44px -18px rgba(45,212,191,0.5); }
+.panel-plasm { border-color: rgba(255,79,163,0.2); }
+.panel-plasm:hover { border-color: rgba(255,79,163,0.55); box-shadow: 0 0 44px -18px rgba(255,79,163,0.6); }
+.panel-gold { border-color: rgba(245,185,66,0.18); }
+.panel-gold:hover { border-color: rgba(245,185,66,0.5); box-shadow: 0 0 44px -18px rgba(245,185,66,0.55); }
+
+.rule-flux {
+  background: linear-gradient(90deg, transparent, rgba(255,107,92,0.6) 14%, rgba(139,123,255,0.55) 44%, rgba(45,212,191,0.5) 72%, rgba(245,185,66,0.5) 90%, transparent);
+}
+
+/* drifting mote */
+@keyframes drift {
+  0% { transform: translateY(0) scale(0.9); opacity: 0; }
+  18% { opacity: 0.85; }
+  100% { transform: translateY(-260px) scale(1.25); opacity: 0; }
+}
+.drift { animation: drift linear infinite; }
+
+@keyframes flow { to { stroke-dashoffset: -48; } }
+.flow { stroke-dasharray: 5 8; animation: flow 1.7s linear infinite; }
+
+@keyframes qpulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+.pulse { animation: qpulse 2.4s ease-in-out infinite; }
+
+@keyframes spin360 { to { transform: rotate(360deg); } }
+.spin-slow { animation: spin360 30s linear infinite; transform-origin: center; }
+.spin-rev { animation: spin360 44s linear infinite reverse; transform-origin: center; }
+
+@keyframes riseIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+.rise-in { animation: riseIn 0.9s cubic-bezier(0.2,0.7,0.2,1) both; }
+.lang-fade { animation: riseIn 0.45s ease both; }
+
+@keyframes breathe { 0%,100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
+.breathe { animation: breathe 4.5s ease-in-out infinite; }
+
+@keyframes twinkle { 0%,100% { opacity: 0.25; } 50% { opacity: 1; } }
+.twinkle { animation: twinkle 3.2s ease-in-out infinite; }
+
+::-webkit-scrollbar { width: 10px; background: #07080f; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #1b1e30, #363a64); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #363a64, #d94e3a); }
