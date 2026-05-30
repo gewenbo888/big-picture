@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Gewenbo", url: "https://psyverse.fun" }],
   alternates: { canonical: "/", languages: { en: "/", "zh-CN": "/", "x-default": "/" } },
   openGraph: {
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "The Big Picture · 《大图景》深度解读 — An Analytical Companion to Sean Carroll’s Book" }],
     title: "The Big Picture — An Analytical Companion",
     description:
       "A bilingual study guide to Sean Carroll's «The Big Picture»: poetic naturalism, Bayesian reasoning, the Core Theory, the arrow of time, emergence, the origin of life, consciousness, free will and the construction of meaning — rebuilt as original interactive visualizations. Independent commentary, not the book.",
@@ -36,6 +37,7 @@ export const metadata: Metadata = {
     alternateLocale: ["zh_CN"],
   },
   twitter: {
+    images: ["/twitter-image.png"],
     card: "summary_large_image",
     title: "The Big Picture — An Analytical Companion",
     description: "A bilingual analytical companion to Sean Carroll's «The Big Picture»: poetic naturalism, Bayesian reasoning, the Core Theory, time's arrow, emergence, consciousness, free will and meaning — with original interactive visualizations.",
